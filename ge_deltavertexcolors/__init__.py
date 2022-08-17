@@ -74,7 +74,16 @@ def delta_to_vcolor(self, context):
         delta[1] = min(max(delta[1], -1), 1)
         delta[2] = min(max(delta[2], -1), 1)
         
-        delta = (delta @ Vector((0.5, 0.5, 0.5))) + Vector((0.5, 0.5, 0.5))
+        try:
+            delta = (delta @ Vector((0.5, 0.5, 0.5))) + Vector((0.5, 0.5, 0.5))
+        except:
+            print("@ did not work trying *")
+        
+        try:
+            delta = (delta * Vector((0.5, 0.5, 0.5))) + Vector((0.5, 0.5, 0.5))
+        except:
+            print("* did not work")
+            
         x = delta[0] 
         y = 1.0 - delta[1]
         z = delta[2]   
