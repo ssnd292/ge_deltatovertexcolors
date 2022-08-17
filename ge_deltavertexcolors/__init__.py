@@ -16,7 +16,7 @@ bl_info = {
     "author" : "Fuxna, Redphoenix",
     "description" : "This addon creates a position delta and bakes it into vertex color based on keyshapes. Used for Farming Sim 2022 roof snow meshes.",
     "blender" : (2, 93, 0),
-    "version" : (0, 0, 2),
+    "version" : (0, 0, 3),
     "location" : "",
     "warning" : "",
     "category" : "Generic"
@@ -83,7 +83,7 @@ def delta_to_vcolor(self, context):
             delta = (delta * Vector((0.5, 0.5, 0.5))) + Vector((0.5, 0.5, 0.5))
         except:
             print("* did not work")
-            
+
         x = delta[0] 
         y = 1.0 - delta[1]
         z = delta[2]   
